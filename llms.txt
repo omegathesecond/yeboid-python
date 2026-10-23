@@ -1,0 +1,9 @@
+# YeboID Python / APIs and server-rendered apps
+
+Read AGENTS.md and README.md in this repository.
+
+- Platform selection: https://docs.yeboid.com/platforms
+- Agent guide: https://docs.yeboid.com/ai-agents
+- Machine-readable SDK catalog: https://docs.yeboid.com/sdk-manifest.json
+
+Use verify_access_token() for online validation on protected APIs, with explicit required scopes. Map invalid_token to 401, insufficient_scope to 403, dependency failures to 5xx. Never turn introspection failure into anonymous success. Consume the server-side PKCE transaction atomically; serialize refreshes across workers with a session/distributed lock. Do not put tokens or PKCE transactions into Flask signed client cookies or Django cookie sessions.

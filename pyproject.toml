@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yeboid-python"
+version = "0.1.0"
+description = "YeboID PKCE and online access-token authorization for Python"
+requires-python = ">=3.10"
+license = "MIT"
+readme = "README.md"
+dependencies = []
+
+[project.urls]
+Documentation = "https://docs.yeboid.com/python-sdk/"
+Source = "https://github.com/omegathesecond/yeboid-python"
+
+[tool.setuptools]
+packages = ["yeboid"]
+
+[tool.setuptools.data-files]
+"share/yeboid-python" = ["AGENTS.md", "llms.txt"]
