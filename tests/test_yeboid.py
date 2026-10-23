@@ -93,6 +93,11 @@ class ClientTests(unittest.TestCase):
         with self.assertRaises(YeboIDError):
             self.client.check_registration()
 
+    def test_missing_refresh_rotation_is_error(self):
+        self.response = dict(access_token="x", expires_in=900, token_type="Bearer", scope="openid")
+        with self.assertRaises(YeboIDError):
+            self.client.refresh("old")
+
 
 if __name__ == "__main__":
     unittest.main()
